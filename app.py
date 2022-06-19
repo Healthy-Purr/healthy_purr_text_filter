@@ -1,10 +1,12 @@
 from resources.text_similarity import get_lines_text
 from distutils.log import debug
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 from config import config
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/evaluation', methods=['POST'])
 def list_values():
